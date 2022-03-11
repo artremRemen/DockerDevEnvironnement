@@ -1,0 +1,49 @@
+version: '3'
+services:
+  php:
+    build:
+      context: ./docker
+      dockerfile: php.Dockerfile
+    container_name: ${APP_NAME:?err}-php
+    volumes:
+      - './app:/var/www/html'
+      - ./docker/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - ./docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:${NGINX_V}
+    container_name: ${APP_NAME:?err}-nginx
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - 'php'
+    volumes:
+      - './app:/var/www/html'
+      - './config/nginx:/etc/nginx/conf.d'
+
+  db:
+    image: mysql:${MYSQL_V}
+    restart: always
+    container_name: ${APP_NAME:?err}-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${SQL_PASSWORD} 
+      MYSQL_DATABASE: ${SQL_DB}
+    ports:
+      - 3306:3306
+    cap_add:
+      - SYS_NICE  # CAP_SYS_NICE
+
+  phpmyadmin:
+    image: phpmyadmin:${PHPMYADMIN}
+    container_name: ${APP_NAME:?err}-phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PMA_USER: ${SQL_USER}
+      PMA_PASSWORD: ${SQL_PASSWORD}
+    depends_on:
+      - db
