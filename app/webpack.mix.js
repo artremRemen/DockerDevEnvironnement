@@ -11,5 +11,3 @@ mix.sass('src/scss/main.scss', 'css/').sourceMaps()
         proxy: 'localhost',
         open: true,
     });
-
-    
