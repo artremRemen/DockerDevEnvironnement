@@ -1,0 +1,25 @@
+{
+    "name": "root/html",
+    "description": "Artrem portfolio",
+    "type": "project",
+    "require": {
+        "ramsey/uuid": "^4.3",
+        "cocur/slugify": "^4.1",
+        "ext-pdo": "*",
+        "nesbot/carbon": "^2.58",
+        "intervention/image": "^2.7"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.19"
+    },
+    "autoload": {
+        "psr-4": {
+            "Root\\Html\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Artrem3W"
+        }
+    ]
+}
