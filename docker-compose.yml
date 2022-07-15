@@ -26,6 +26,7 @@ services:
 
   db:
     image: mysql:${MYSQL_V}
+    platform: linux/amd64
     restart: always
     container_name: ${APP_NAME:?err}-mysql
     environment:
