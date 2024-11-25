@@ -1,0 +1,46 @@
+/* Variable */
+
+int $a = 5;     /* set une variable */
+float $b = 3.456;
+vector $v = <<1.2, 3.4, 6.5>>;
+float $ar[] = {1.2, 3.4, 4.5}; // An array of floats
+matrix $mtx[3][2]; // A 3x2 matrix of floats
+
+
+print("comentaire a afficher");     /* afficher quelque chose dans la console */
+
+/* conditions */
+
+if ( $a == $b) {
+	/* code */
+} else if ($a > $b) {
+	/* code */
+} else {
+	/* code */
+}
+
+/* Boucles */
+
+switch ($var) {
+    case "blue":
+        /* code */
+    break;
+    case $value:
+        /* code */
+    break;
+    default:
+        /* code */
+    break;
+}
+
+while ($a < size($arry)) {
+	/* Code */
+}
+
+while ($a < size($arry)) {
+	/* code */
+}
+
+for ($i = 10; $i > 0; $i--) {
+	/* code */
+}

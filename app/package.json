@@ -16,7 +16,7 @@
   "author": "Arthur Remendaer",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.27.7",
+    "browser-sync": "^3.0.3",
     "browser-sync-webpack-plugin": "^2.3.0",
     "cross-env": "^6.0.3",
     "laravel-mix": "^6.0.42",
@@ -25,6 +25,5 @@
     "sass-loader": "^8.0.2",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.5"
-  },
-  "dependencies": {}
+  }
 }

@@ -1,0 +1,175 @@
+une classe est définie par un mot clé (class).
+
+public static void main(String[] args)		
+{
+  //Contenu de votre classe
+}
+
+// text 		commentaire sur une ligne
+/* text */		commentaire sur plusieurs ligne
+
+
+System.out.println("text");
+System 			ceci correspond à l'appel d'une classe qui se nomme « System » . C'est une classe utilitaire qui permet surtout d'utiliser l'entrée et la sortie standard, c'est-à-dire la saisie clavier et l'affichage à l'écran.
+out 			objet de la classe System qui gère la sortie standard.
+print 			méthode qui écrit dans la console le texte passé en paramètre (entre les parenthèses).
+
+
+
+Scanner sc = new Scanner(System.in);		importer la variable scanner
+
+
+RETOUR A LA LIGNE
+
+\n 				caractere d'échappement
+println()		methode
+\r 				va insérer un retour chariot, parfois utilisé aussi pour les retours à la ligne
+\t 				va faire une tabulation
+
+\		permet d'échapper les guillemet
+
+VARIABLE
+
+<Type de la variable> <Nom de la variable> ;		initialisation de la variable
+
+type de variable
+
+byte		variable de nombre entier entre -128 et +127
+short 		variable de nombre entiers entre -32768 et +32767.
+int 		va de -2*109 à 2*109 (2 et 9 zéros derrière)
+long		peut aller de −9×1018  à 9×1018 (encore plus gros…)
+
+SI LE NOMBRE EST GRAND IL DOIT FINIR PAR LA LETTRE "l"
+
+float 		est utilisé pour les nombres avec une virgule flottante
+
+SI LE NOMBRE EST une virgule IL DOIT FINIR PAR LA LETTRE "f"
+
+double 		est identique à float, si ce n'est qu'il contient plus de chiffres derrière la virgule et qu'il n'a pas de suffixe
+
+char 		contient un caractère stocké entre apostrophes (« ' ' »)
+
+boolean		lui, ne peut contenir que deux valeurs  : true (vrai) ou false (faux), sans guillemets
+
+String		permet de gérer les chaînes de caractères, c'est-à-dire le stockage de texte
+
+OPERATION 
+
+int nbre1, nbre2, nbre3;  //Déclaration des variables
+ 
+nbre1 = 1 + 3;            //nbre1 vaut 4
+nbre2 = 2 * 6;            //nbre2 vaut 12
+nbre3 = nbre2 / nbre1;    //nbre3 vaut 3
+nbre1 = 5 % 2;            //nbre1 vaut 1, car 5 = 2 * 2 + 1
+nbre2 = 99 % 8;           //nbre2 vaut 3, car 99 = 8 * 12 + 3
+nbre3 = 6 % 3;            //là, nbre3 vaut 0, car il n'y a pas de reste
+
+int nbre1, nbre2, nbre3;    //Déclaration des variables
+nbre1 = nbre2 = nbre3 = 0;  //Initialisation
+ 
+nbre1 = nbre1 + 1;     //nbre1 = lui-même, donc 0 + 1 => nbre1 = 1
+nbre1 = nbre1 + 1;     //nbre1 = 1 (cf. ci-dessus), maintenant, nbre1 = 1 + 1 = 2
+nbre2 = nbre1;         //nbre2 = nbre1 = 2
+nbre2 = nbre2 * 2;     //nbre2 = 2 => nbre2 = 2 * 2 = 4
+nbre3 = nbre2;         //nbre3 = nbre2 = 4
+nbre3 = nbre3 / nbre3; //nbre3 = 4 / 4 = 1
+nbre1 = nbre3;         //nbre1 = nbre3 = 1
+nbre1 = nbre1 - 1;     //nbre1 = 1 - 1 = 0
+
+typevar = (typevar)(typevar1)		typevar sont les type de variable et entre parenthese se sont des cast CAD changer de variable 
+double nombre = 1____000____000___000_000d; 		les _ ne sont pas lus par la JM
+int entier = 0b1111_1111;			pour travailler en bit
+
+en racourcis
+
+nbre1 = nbre1 + 1;
+nbre1 += 1;
+nbre1++;
+++nbre1;
+on ne peut faire du traitement arithmétique que sur des variables de même type sous peine de perdre de la précision lors du calcul
+System.out.println (nombre);				afficher la variable
+
+LIRE ENTREE
+
+Scanner var = new Scanner(System.in);					lecture des entree
+System.out.println("Veuillez saisir un nombre :");			
+int var2 = var.nextInt();									changement en nombre(string = Line )
+System.out.println("Vous avez saisi le nombre : " + var2);
+
+next<Type de variable commençant par une majuscule>			récupérer type de variable(char n'est pas pris en compte)
+
+if(var1.length()!=0)		savoir si elle est vide
+
+
+FONCTION
+
+	==			est egale a 
+	<			est inferieur a 
+	>			est superieur a
+	<= 			est inferieur ou egale a 
+	>=			est superieur ou egale a
+	!= 			est different de
+
+	CONDITION
+
+	if 			si
+	else		sinon
+	else if 	sinon si
+
+	switch		if else simplifier exp en dessosu il ne peut pas lire les nombres
+
+	    switch (nbEnfants)
+    {
+        case 0:
+            cout << "Eh bien alors, vous n'avez pas d'enfant ?" << endl;
+            break;
+
+        case 1:
+            cout << "Alors, c'est pour quand le deuxieme ?" << endl;
+            break;
+
+        case 2:
+            cout << "Quels beaux enfants vous avez la !" << endl;
+            break;
+
+        default:								correspond au else
+            cout << "Bon, il faut arreter de faire des gosses maintenant !" << endl;
+            break;
+    }
+
+
+    if (adulte == true) ou if (adulte)		revient au meme(adulte est boolean)
+
+    &&		signifie et exp if(var1 condition &&var2 condition)
+    ||		signifie ou
+    !		signifie non
+
+    BOUCLE
+
+    while (condition)		le liras ci la condition n'est pas remplie
+{
+    Instructions à répéter
+}
+
+do 							le lira au moins une fois
+{
+    Instructions
+} while (condition)
+
+    for (compteur = 0 ; compteur < 10 ; compteur++)	affiche de 0 a 9
+    {
+        cout << compteur << endl;
+    }
+
+do{							meme chose que while a part qu'il va au moin lire une fois
+  //Instructions
+}while(a < b);
+
+for(int i = 1; i <= 10; i++)				boucle for
+{
+  System.out.println("Voici la ligne "+i);
+}
+
+
+	TABLEAU
+<type du tableau> <nom du tableau> [] = { <contenu du tableau>};
